@@ -5,3 +5,4 @@ Now changed Content-Type to application/json
 Still did not work. Enabled https
 Setup ngRok Now testing again
 changed jenkins startup file now to stop csrf checking
+set proxy compatibility in Jenkins and added / at end of ngrok url
