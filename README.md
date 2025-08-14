@@ -4,3 +4,4 @@ Did not work
 Now changed Content-Type to application/json
 Still did not work. Enabled https
 Setup ngRok Now testing again
+changed jenkins startup file now to stop csrf checking
