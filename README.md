@@ -9,3 +9,4 @@ set proxy compatibility in Jenkins and added / at end of ngrok url
 set hudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION = true in Manage Nodes Script Console for the node -> Got Authentication required error
 Did not work added Secret as a value in both Github and Jenkins
 Restarted ngrok and changed url again in Github webhooks
+looked at video and changed
