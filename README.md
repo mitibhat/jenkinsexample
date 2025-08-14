@@ -6,3 +6,5 @@ Still did not work. Enabled https
 Setup ngRok Now testing again
 changed jenkins startup file now to stop csrf checking
 set proxy compatibility in Jenkins and added / at end of ngrok url
+set hudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION = true in Manage Nodes Script Console for the node -> Got Authentication required error
+
