@@ -10,3 +10,4 @@ set hudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION 
 Did not work added Secret as a value in both Github and Jenkins
 Restarted ngrok and changed url again in Github webhooks
 looked at video and changed
+changed again
