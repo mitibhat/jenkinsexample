@@ -1,0 +1,19 @@
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: jenkinsexample-app-deployment
+        spec:
+          replicas: 3 # Number of desired Pod replicas
+          selector:
+            matchLabels:
+              app: jenkinsexample-app
+          template:
+            metadata:
+              labels:
+                app: jenkinsexample-app
+            spec:
+              containers:
+              - name: nodejs-container
+                image: docker.io/jenkinsexample-app:latest # Your pushed image
+                ports:
+                - containerPort: 3000 # Port your app listens on
