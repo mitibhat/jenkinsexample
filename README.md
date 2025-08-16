@@ -14,3 +14,5 @@ changed again
 
 Trying Nodejs Jenkins in Kubernetes
 Push succeeded
+
+Had specified the branch as */master... Changed to */main
