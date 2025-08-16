@@ -1,45 +1,38 @@
 pipeline {
-    agent any // Specifies that the pipeline can run on any available agent
-
-    environment {
-        // Define environment variables specific to your Node.js application
-        NODE_ENV = 'development' 
+    agent {
+        docker {
+            image 'node:18-alpine' // Use a suitable Node.js Docker image
+            args '-v /var/run/docker.sock:/var/run/docker.sock' // Optional: Mount Docker socket if you need to build/push Docker images from within the agent
+        }
     }
-
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                // Clones your Git repository
-                git branch: 'main', url: 'https://github.com/mitibhat/jenkinsexample.git' 
+                git branch: 'main', url: 'https://github.com/mitibhat/jenkinsexample.git' // Replace with your repository URL
             }
         }
-
         stage('Install Dependencies') {
             steps {
-                // Installs Node.js dependencies
-                sh 'npm install' 
+                sh 'npm install'
             }
         }
-
         stage('Run Tests') {
             steps {
-                // Executes your application's tests
-                sh 'npm test' 
+                sh 'npm test'
             }
         }
-
-        stage('Build (Optional)') {
+        stage('Build Project') {
             steps {
-                // If your application requires a build step (e.g., for frontend assets)
-                sh 'npm run build' 
+                sh 'npm run build' // If your project has a build step
             }
         }
-
-        stage('Deploy (JenkinsExample)') {
+        // Optional: Add a stage to build a Docker image of your Node.js app
+        stage('Build Docker Image') {
             steps {
-                // Example deployment step: restart the application using PM2
-                // This assumes PM2 is installed and configured on the target server
-                sh 'pm2 restart all || pm2 start server.js --name jenkinsexample-app' 
+                script {
+                    // Assuming you have a Dockerfile in your repository root
+                    sh 'docker build -t jenkinsexample-app:latest .'
+                }
             }
         }
     }
