@@ -11,6 +11,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/mitibhat/jenkinsexample.git' // Replace with your repository URL
             }
         }
+        stage('Validate') {
+            steps {
+                script {
+                    sh 'ls -la'
+                }
+            }
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
