@@ -1,10 +1,8 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18-alpine' // Use a suitable Node.js Docker image
-            
+    agent any
+        tools {
+            docker 'Docker-Local' // Use the name configured in Global Tool Configuration
         }
-    }
     stages {
         stage('Clone Repository') {
             steps {
