@@ -2,6 +2,7 @@ pipeline {
     agent any
    tools {
             dockerTool 'Docker-Local' // Use the name configured in Global Tool Configuration
+             nodejs 'node22'
         }
     stages {
         stage('Clone Repository') {
