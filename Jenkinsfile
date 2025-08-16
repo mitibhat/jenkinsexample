@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:18-alpine' // Use a suitable Node.js Docker image
-            args '-v /var/run/docker.sock:/var/run/docker.sock' // Optional: Mount Docker socket if you need to build/push Docker images from within the agent
+            
         }
     }
     stages {
