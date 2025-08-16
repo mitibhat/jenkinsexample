@@ -17,3 +17,4 @@ Push succeeded
 
 Had specified the branch as */master... Changed to */main
 webhook changed the content type
+enabled reverse proxy compatibility in Jenkins
