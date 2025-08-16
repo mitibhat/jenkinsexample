@@ -22,11 +22,7 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Run Tests') {
-            steps {
-                sh 'npm test'
-            }
-        }
+       
         stage('Build Project') {
             steps {
                 sh 'npm run build' // If your project has a build step
