@@ -11,7 +11,6 @@
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
-    "webpack": "^5.101.2",
-    "webpack-cli": "^6.0.1"
+    "webpack": "^5.101.2"
   }
 }
