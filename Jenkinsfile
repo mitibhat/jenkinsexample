@@ -27,7 +27,9 @@ pipeline {
        
         stage('Build Project') {
             steps {
+                script{
                 sh 'npm run build' // If your project has a build step
+            }
             }
         }
         // Optional: Add a stage to build a Docker image of your Node.js app
