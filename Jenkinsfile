@@ -27,7 +27,7 @@ pipeline {
                     // Add your test commands here
                 }
                steps {
-                  bat 'docker build -t my-image .'
+                  bat 'docker build -t jenkinsexample-app .'
               }
             }
         
