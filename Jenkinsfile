@@ -21,13 +21,15 @@ pipeline {
        
        
         // Optional: Add a stage to build a Docker image of your Node.js app
-        stage('Build Docker Image') {
+        stage('Push Docker Image') {
             steps {
                 script {
-                    // Assuming you have a Dockerfile in your repository root
-                    sh 'docker build -t jenkinsexample-app:latest .'
+                    // Push the Docker image to a registry (e.g., Docker Hub)
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'miti.bhat@gmail.com', passwordVariable: 'iLoveDocker#2025')]) {
+                        sh "echo \$DOCKER_PASS | docker login -u \$DOCKER_USER --password-stdin"
+                        sh "docker push jenkinsexample-app:latest"
+                    }
                 }
             }
-        }
     }
 }
