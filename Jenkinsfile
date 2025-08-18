@@ -14,13 +14,7 @@ pipeline {
             }
         }
        
-        stage('Validate') {
-            steps {
-                script {
-                    sh 'ls -la'
-                }
-            }
-        }
+        
         stage('Test') {
                 steps {
                    script {
