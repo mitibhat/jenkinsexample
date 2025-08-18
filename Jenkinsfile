@@ -23,6 +23,7 @@ pipeline {
         }
         stage('Test') {
                 steps {
+                   script {
                     sh 'echo "Testing inside Docker container..."'
                     // Add your test commands here
                 }
@@ -31,3 +32,4 @@ pipeline {
       
 }
 }
+   }
