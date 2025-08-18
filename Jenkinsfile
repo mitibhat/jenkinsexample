@@ -31,6 +31,8 @@ pipeline {
                     sh 'echo "Testing inside Docker container..."'
                     // Add your test commands here
                 }
+            }
+         stage('Test') {
                steps {
                   bat 'docker build -t jenkinsexample-app .'
               }
