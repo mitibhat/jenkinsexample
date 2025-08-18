@@ -1,7 +1,7 @@
 pipeline {
    agent any
    environment {
-          PATH = "/var/jenkis_home"
+          PATH = "/var/jenkins_home"
       }
    tools {
             dockerTool 'Docker-Local' // Use the name configured in Global Tool Configuration
