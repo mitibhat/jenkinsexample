@@ -18,7 +18,7 @@ pipeline {
         stage('Test') {
                 steps {
                    script {
-                    bat "echo 'Testing inside Docker container...'"
+                    sh "echo 'Testing inside Docker container...'"
                     // Add your test commands here
                 }
             }
@@ -27,9 +27,9 @@ pipeline {
                 steps {
                    script {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials',usernameVariable: 'USERNAME',passwordVariable: 'PASSWORD')]){
-                     bat "echo $USERNAME"
+                     sh "echo $USERNAME"
                        
-                     bat "echo $PASSWORD"
+                     sh "echo $PASSWORD"
                     }
                 }
             }
