@@ -22,6 +22,7 @@ pipeline {
        
         // Optional: Add a stage to build a Docker image of your Node.js app
        stage('Build Docker Image') {
+           withEnv(['PATH=C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}']) {
             steps {
                 script {
                     // Assuming you have a Dockerfile in your repository root
@@ -29,5 +30,6 @@ pipeline {
                 }
             }
         }
+       }
 }
 }
