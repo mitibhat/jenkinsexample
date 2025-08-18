@@ -40,7 +40,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials',usernameVariable: 'USERNAME',passwordVariable: 'PASSWORD')]){
                      bat "echo $USERNAME"
                        
-                     bat "echo $PASSWORD
+                     bat "echo $PASSWORD"
                     }
                 }
             }
