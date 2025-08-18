@@ -33,7 +33,7 @@ pipeline {
                steps {
                   
                   script {
-                   sh "docker list"
+                   sh "docker image ls --all"
                 }
               
             }
