@@ -4,7 +4,7 @@ pipeline {
           PATH = "/var/jenkins_home"
       }
    tools {
-            dockerTool 'Docker-Local' // Use the name configured in Global Tool Configuration
+           
             nodejs 'nodejs' 
         }
     stages {
@@ -26,6 +26,9 @@ pipeline {
                     sh 'echo "Testing inside Docker container..."'
                     // Add your test commands here
                 }
+               steps {
+                  bat 'docker build -t my-image .'
+              }
             }
         
       
