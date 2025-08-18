@@ -34,6 +34,17 @@ pipeline {
                 }
             }
         }
+         stage('Hello') {
+                steps {
+                   script {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials',usernameVariable: 'USERNAME',passwordVariable: 'PASSWORD')]){
+                     bat "echo $USERNAME"
+                       
+                     bat "echo $PASSWORD
+                    }
+                }
+            }
+        }
          stage('Test two') {
                steps {
                    script {
