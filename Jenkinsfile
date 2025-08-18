@@ -18,6 +18,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/mitibhat/jenkinsexample.git' // Replace with your repository URL
             }
         }
+       
         stage('Validate') {
             steps {
                 script {
@@ -32,13 +33,13 @@ pipeline {
                     // Add your test commands here
                 }
             }
-         stage('Test') {
+        }
+         stage('Test two') {
                steps {
-                  bat 'docker build -t jenkinsexample-app .'
+                   script {
+                  sh 'docker build -t jenkinsexample-app .'
               }
             }
-        
-      
-}
-}
+            }
+    }
    }
