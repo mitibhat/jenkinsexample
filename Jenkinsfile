@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+   agent {
+            docker {
+                image 'jenkins/jenkins:lts' // Use the official Jenkins LTS image
+                args '-p 8080:8080 -p 50000:50000' // Example port mappings
+            }
    tools {
             dockerTool 'Docker-Local' // Use the name configured in Global Tool Configuration
             nodejs 'nodejs' 
@@ -17,19 +21,13 @@ pipeline {
                 }
             }
         }
-        
-       
-       
-        // Optional: Add a stage to build a Docker image of your Node.js app
-       stage('Build Docker Image') {
-           withEnv(['PATH=C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}']) {
-            steps {
-                script {
-                    // Assuming you have a Dockerfile in your repository root
-                    sh 'docker build -t jenkinsexample-app:latest .'
+        stage('Test') {
+                steps {
+                    sh 'echo "Testing inside Docker container..."'
+                    // Add your test commands here
                 }
             }
-        }
-       }
+        
+      
 }
 }
