@@ -1,7 +1,7 @@
 pipeline {
    agent any
    environment {
-          PATH = "C:/Program Files/Docker/Docker/resources/bin"
+          C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}
       }
    tools {
            
