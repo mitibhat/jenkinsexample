@@ -1,10 +1,8 @@
 pipeline {
-   agent {
-            docker {
-                image 'jenkins/jenkins:lts' // Use the official Jenkins LTS image
-                args '-p 8080:8080 -p 50000:50000' // Example port mappings
-            }
-   }
+   agent any
+   environment {
+          PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
+      }
    tools {
             dockerTool 'Docker-Local' // Use the name configured in Global Tool Configuration
             nodejs 'nodejs' 
