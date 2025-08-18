@@ -35,7 +35,11 @@ pipeline {
          stage('Test two') {
                steps {
                   
-                  docker build -t jenkinsexample-app .
+                  script {
+                    def imageName = "mitibhat/jenkinsexample-app:latest" // Customize image name
+                    sh "docker build -t ${imageName} ."
+                    dockerImage = imageName // Store image name for later use if needed
+                }
               
             }
             }
