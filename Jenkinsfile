@@ -1,5 +1,10 @@
 pipeline {
-   agent any
+   agent{
+    docker{
+        image 'jenkinsexample-app:latest'
+        args "-u root"
+    }
+}
    environment {
           PATH = "C:/Program Files/Docker/Docker/resources/bin"
       }
