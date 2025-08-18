@@ -35,7 +35,7 @@ pipeline {
          stage('Test two') {
                steps {
                    script {
-                  sh 'docker build -t jenkinsexample-app .'
+                  docker build -t jenkinsexample-app .
               }
             }
             }
