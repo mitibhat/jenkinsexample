@@ -1,7 +1,7 @@
 pipeline {
    agent any
    environment {
-          PATH = "/var/jenkins_home"
+          PATH = "C:/Program Files/Docker/Docker/resources/bin"
       }
    tools {
            
