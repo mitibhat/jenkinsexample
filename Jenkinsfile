@@ -1,11 +1,6 @@
 pipeline {
  
- agent {
-            docker {
-                image 'maven:3.8.1-jdk-11'
-                args '-v /var/run/docker.sock:/var/run/docker.sock' // Expose socket
-            }
-        }
+ agent any
     
     stages {
      stage('Clone Repository') {
