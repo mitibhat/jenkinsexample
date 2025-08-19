@@ -37,14 +37,5 @@ pipeline {
                 }
             }
         }
-         stage('Test two') {
-               steps {
-                  
-                  script {
-                   sh "docker image ls --all"
-                }
-              
-            }
-            }
     }
    }
