@@ -1,7 +1,7 @@
 pipeline {
   agent any
    tools {
-            dockerTool 'Docker-Local' // Use the name configured in Global Tool Configuration
+            docker 'Docker-Local' // Use the name configured in Global Tool Configuration
             
         }
 
