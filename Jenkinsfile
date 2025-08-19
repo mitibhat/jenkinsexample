@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  
+  environment {
+    PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
+    // rest of your environment variables...
+}
   
     stages {
       stage("Fix the permission issue") {
