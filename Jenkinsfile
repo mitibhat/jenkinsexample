@@ -3,6 +3,15 @@ pipeline {
   
   
     stages {
+      stage("Fix the permission issue") {
+
+            agent any
+
+            steps {
+                sh "sudo chown root:jenkins /run/docker.sock"
+            }
+
+        }
         stage('Clone Repository') {
             steps {
                 git branch: 'main', url: 'https://github.com/mitibhat/jenkinsexample.git' // Replace with your repository URL
