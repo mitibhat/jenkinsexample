@@ -3,8 +3,7 @@ pipeline {
   environment {
     PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
     // rest of your environment variables...
-}
-  
+}  
     stages {
      stage('Clone Repository') {
             steps {
