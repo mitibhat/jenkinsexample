@@ -1,9 +1,6 @@
 pipeline {
   agent any
-  environment {
-    PATH = "${env.PATH};C:\\Program Files\\Docker\\Docker\\resources\\bin;"
-    // rest of your environment variables...
-}  
+  
     stages {
      stage('Clone Repository') {
             steps {
