@@ -1,10 +1,6 @@
 pipeline {
   agent any
-   tools {
-            docker 'Docker-Local' // Use the name configured in Global Tool Configuration
-            
-        }
-
+  
   
     stages {
         stage('Clone Repository') {
