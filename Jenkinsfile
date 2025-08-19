@@ -1,8 +1,10 @@
 pipeline {
-   agent {
-        docker { image 'maven:3.8.1-adoptopenjdk-11' }
-      }
-   
+  agent any
+   tools {
+            dockerTool 'Docker-Local' // Use the name configured in Global Tool Configuration
+            
+        }
+
   
     stages {
         stage('Clone Repository') {
