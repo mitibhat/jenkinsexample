@@ -1,11 +1,9 @@
 pipeline {
  
    agent {
-        docker {
-            image 'docker'
-            args '-v /var/run/docker.sock:/var/run/docker.sock' 
-        }
+       docker 'maven:3.9.3-eclipse-temurin-17' 
     }
+    
     stages {
      stage('Clone Repository') {
             steps {
