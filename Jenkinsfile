@@ -25,9 +25,9 @@ pipeline {
                      sh "echo $USERNAME"
                        
                      sh "echo $PASSWORD"
-                       sh "docker tag node-app-test-new ${env.USERNAME}/node-app-test-new:latest"
-                       sh "docker login -u ${env.USERNAME} -p ${env.PASSWORD}"
-                       sh "docker push ${env.USERNAME}/jenkinsexample-app:latest"
+                       sh "sudo docker tag node-app-test-new ${env.USERNAME}/node-app-test-new:latest"
+                       sh "sudo docker login -u ${env.USERNAME} -p ${env.PASSWORD}"
+                       sh "sudo docker push ${env.USERNAME}/jenkinsexample-app:latest"
 
                     }
                 }
