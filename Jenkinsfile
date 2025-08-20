@@ -34,7 +34,7 @@ pipeline {
                      sh "echo $USERNAME"
                        
                      sh "echo $PASSWORD"
-                       sh "sudo docker tag node-app-test-new ${env.USERNAME}/node-app-test-new:latest"
+                       docker tag node-app-test-new ${env.USERNAME}/node-app-test-new:latest
                        sh "sudo docker login -u ${env.USERNAME} -p ${env.PASSWORD}"
                        sh "sudo docker push ${env.USERNAME}/jenkinsexample-app:latest"
 
