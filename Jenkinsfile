@@ -1,9 +1,6 @@
 pipeline {
  
-agent {
-                label 'dockercloud' // This label must match the label configured in your Docker Agent Template
-            }
-    
+agent any
 
     stages {
      stage('Clone Repository') {
