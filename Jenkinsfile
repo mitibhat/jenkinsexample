@@ -27,11 +27,7 @@ pipeline {
                 }
             }
         }
-     stage('Only docker'){
-      steps{
-       docker tag jenkinsexample-app-test:jenkinsexample-app:latest
-      }
-     }
+    
          stage('Hello') {
                 steps {
                    script {
@@ -39,9 +35,9 @@ pipeline {
                      sh "echo $USERNAME"
                        
                      sh "echo $PASSWORD"
-                       
-                       sh "sudo docker login -u ${env.USERNAME} -p ${env.PASSWORD}"
-                       sh "sudo docker push ${env.USERNAME}/jenkinsexample-app:latest"
+                       sh "docker tag jenkinsexample-app ${env.USERNAME}/jenkinsexample-app:latest"
+                       sh "docker login -u ${env.USERNAME} -p ${env.PASSWORD}"
+                       sh "docker push ${env.USERNAME}/jenkinsexample-app:latest"
 
                     }
                 }
