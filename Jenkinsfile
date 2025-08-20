@@ -1,7 +1,7 @@
 pipeline {
  
 agent{
- dockerTool 'Docker-Local'
+ docker 'Docker-Local'
 }
     
 
