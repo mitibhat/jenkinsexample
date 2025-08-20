@@ -22,7 +22,7 @@ pipeline {
                    script {
                     sh "echo 'Testing inside Docker container...'"
                     sh 'echo $PATH'
-                    docker images
+                    //docker images
                     // Add your test commands here
                 }
             }
