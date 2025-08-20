@@ -16,6 +16,7 @@ agent any
         stage('Test') {
                 steps {
                  script {
+                  echo "Inside Test"
                     sh "echo 'Testing inside Docker container...'"
                     sh 'echo $PATH'
                    
