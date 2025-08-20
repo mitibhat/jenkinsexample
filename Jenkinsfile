@@ -25,7 +25,7 @@ pipeline {
                    script {
                     sh "echo 'Testing inside Docker container...'"
                     sh 'echo $PATH'
-                    sh "sudo -u root docker images"
+                    sh "docker images"
                     // Add your test commands here
                 }
             }
