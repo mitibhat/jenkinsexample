@@ -1,6 +1,8 @@
 pipeline {
  
- agent any
+agent{
+ docker 'Docker-Local'
+}
     
 
     stages {
