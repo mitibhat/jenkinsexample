@@ -27,7 +27,7 @@ pipeline {
                 }
             }
         }
-     stage{
+     stage('Only docker'){
       steps{
        docker tag jenkinsexample-app-test:jenkinsexample-app:latest
       }
