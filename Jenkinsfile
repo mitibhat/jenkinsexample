@@ -30,7 +30,7 @@ pipeline {
     stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("jenkinsexample-app:${env.BUILD_NUMBER}")
+                    docker.build("jenkinsexample-app:${env.BUILD_NUMBER}")
                 }
             }
         }
