@@ -12,7 +12,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/mitibhat/jenkinsexample.git' // Replace with your repository URL
             }
         }
-       
+       stage('Run Sudo Command') {
+            steps {
+                sh 'sudo apt update' // Example: updating package lists
+                sh 'sudo systemctl restart my-service' // Example: restarting a service
+            }
+        }
         
         stage('Test') {
                 steps {
