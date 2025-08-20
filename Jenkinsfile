@@ -8,14 +8,7 @@ agent any
                 git branch: 'main', url: 'https://github.com/mitibhat/jenkinsexample.git' // Replace with your repository URL
             }
         }
-      stage('Get User') {
-            steps {
-                script {
-                    def currentUser = sh(returnStdout: true, script: 'id -un').trim()
-                    echo "The user running this pipeline is: ${currentUser}" 
-                }
-            }
-        }
+      
         stage('Test') {
                 steps {
                    script {
