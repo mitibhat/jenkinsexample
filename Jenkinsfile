@@ -12,13 +12,19 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/mitibhat/jenkinsexample.git' // Replace with your repository URL
             }
         }
-      
+      stage('Get User') {
+            steps {
+                script {
+                    def currentUser = sh(returnStdout: true, script: 'id -un').trim()
+                    echo "The user running this pipeline is: ${currentUser}"
+                }
+            }
+        }
         stage('Test') {
                 steps {
                    script {
                     sh "echo 'Testing inside Docker container...'"
-                    sh 'echo $PATH'
-                    sh "echo 'whoami'"
+                    sh 'echo $PATH
                     // Add your test commands here
                 }
             }
