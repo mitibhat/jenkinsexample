@@ -27,7 +27,13 @@ pipeline {
                 }
             }
         }
-    
+    stage('Build Docker Image') {
+            steps {
+                script {
+                    dockerImage = docker.build("jenkinsexample-app:${env.BUILD_NUMBER}")
+                }
+            }
+        }
          stage('Hello') {
                 steps {
                    script {
