@@ -13,23 +13,7 @@ agent any
             }
         }
       
-        stage('Test') {
-                steps {
-                 script {
-                     echo "Inside Test"
-                    sh "echo 'Testing inside Docker container...'"
-                    sh 'echo $PATH'
-                   
-                }
-            }
-        }
-    stage('Build Docker Image') {
-            steps {
-                script {
-                    docker.build("jenkinsexample-app:${env.BUILD_NUMBER}")
-                }
-            }
-        }
+       
          stage('Hello') {
                 steps {
                    script {
