@@ -1,10 +1,7 @@
 pipeline {
  
  agent any
-    environment {
-    PATH = "/usr/bin:C:/Program Files/Docker/Docker/resources/bin;${env.PATH}"
     
-}
 
     stages {
      stage('Clone Repository') {
@@ -25,7 +22,7 @@ pipeline {
                    script {
                     sh "echo 'Testing inside Docker container...'"
                     sh 'echo $PATH'
-                    sh "docker images"
+                    docker images
                     // Add your test commands here
                 }
             }
