@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     def currentUser = sh(returnStdout: true, script: 'id -un').trim()
-                    echo "The user running this pipeline is: ${currentUser}"
+                    echo "The user running this pipeline is: ${currentUser}" 
                 }
             }
         }
