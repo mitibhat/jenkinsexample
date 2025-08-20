@@ -15,7 +15,7 @@ agent any
       
         stage('Test') {
                 steps {
-                   script {
+                  withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin'])  {
                     sh "echo 'Testing inside Docker container...'"
                     sh 'echo $PATH'
                    
