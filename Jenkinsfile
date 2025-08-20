@@ -1,8 +1,8 @@
 pipeline {
  
-agent{
- docker 'Docker-Local'
-}
+agent {
+                label 'dockercloud' // This label must match the label configured in your Docker Agent Template
+            }
     
 
     stages {
