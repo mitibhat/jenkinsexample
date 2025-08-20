@@ -24,7 +24,7 @@ pipeline {
                 steps {
                    script {
                     sh "echo 'Testing inside Docker container...'"
-                    sh 'echo $PATH
+                    sh 'echo $PATH'
                     // Add your test commands here
                 }
             }
