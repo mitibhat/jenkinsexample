@@ -29,7 +29,7 @@ pipeline {
         }
      stage{
       steps{
-       docker tag jenkinsexample-app-test jenkinsexample-app:latest
+       docker tag jenkinsexample-app-test:jenkinsexample-app:latest
       }
      }
          stage('Hello') {
