@@ -2,7 +2,7 @@ pipeline {
  
 agent any
  environment {
-    PATH = "C:/Program Files/Docker/Docker/resources/bin;${env.PATH}"
+    PATH = "/usr/local/bin:C:/Program Files/Docker/Docker/resources/bin;${env.PATH}"
     
 }
 
@@ -15,7 +15,7 @@ agent any
       
         stage('Test') {
                 steps {
-                  withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin'])  {
+                  {
                     sh "echo 'Testing inside Docker container...'"
                     sh 'echo $PATH'
                    
