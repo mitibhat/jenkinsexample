@@ -4,7 +4,7 @@ const http = require('http'); // Import the http module
 const server = http.createServer((req, res) => {
   // Set the response header
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-
+//added comment
   // Send a response
   res.end('Hello, this is a simple Node.js web server!');
 });
