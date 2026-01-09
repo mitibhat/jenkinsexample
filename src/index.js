@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
 
   // Send a response
-  res.end('Hello, this is a simple Node.js web server!');
+  res.end('Hello again on 09-01-2026, this is a simple Node.js web server!');
 });
 
 // Specify the port on which the server will listen
