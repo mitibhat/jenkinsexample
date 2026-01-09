@@ -23,6 +23,7 @@ agent any
                      sh "echo $PASSWORD"
                        sh "docker tag jenkinsexample-app ${env.USERNAME}/jenkinsexample-app:latest"
                        sh "docker login -u ${env.USERNAME} -p ${env.PASSWORD}"
+                       sh "docker build -t mitibhat/jenkinsexample-app:latest ."
                        sh "docker push ${env.USERNAME}/jenkinsexample-app:latest"
 
                     }
